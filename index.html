@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AlegreMente 2025 · Escena 8</title>
+  <meta name="description" content="Guía completa para aprender y montar la Escena 8: Colombia Tierra Querida." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body
+  id="scene8"
+  data-audio="Colombia Tierra Querida.mp3,Colombia Tierra Querida - Orquesta.mp3"
+  data-guion="Guión Escena VIII.pdf"
+  data-scores-url="[PON_AQUÍ_EL_ENLACE_DE_LA_CARPETA_DE_PARTITURAS]"
+  data-hero="Escena 8.jpg"
+  data-fondo="Fondo 8.jpg"
+>
+  <!-- Barra superior -->
+  <header class="top">
+    <div class="topbar wrap">
+      <div class="brand">
+        <img src="logo.jpg" alt="Logo Musicala" width="36" height="36" style="border-radius:10px; object-fit:cover" />
+        <div>
+          <h1>AlegreMente 2025 · Guía de Escena</h1>
+          <small class="muted">Escena 8 · Colombia Tierra Querida</small>
+        </div>
+      </div>
+      <a class="btn-back" href="index.html">⬅ Volver al menú</a>
+    </div>
+  </header>
+
+  <!-- Reproductor -->
+  <div class="playerbar">
+    <div class="player wrap">
+      <label for="sceneAudio" id="audioLabel">🎶 Audio: “Colombia Tierra Querida”</label>
+      <audio id="sceneAudio" preload="auto" controls playsinline></audio>
+      <button id="btnPlay" class="btn" title="Reproducir / Pausar">▶ Reproducir</button>
+    </div>
+  </div>
+
+  <!-- Filtros -->
+  <div class="filters">
+    <div class="wrap">
+      <div class="filter-group" id="grp-areas">
+        <h4>Arte</h4>
+        <span class="chip" data-type="area" data-area="teatro">Teatro</span>
+        <span class="chip" data-type="area" data-area="musica">Música/Orquesta</span>
+        <span class="chip" data-type="area" data-area="plastica">Artes plásticas</span>
+        <span class="chip" data-type="area" data-area="danza">Danza</span>
+        <span class="chip" data-type="area" data-area="luces">Luces</span>
+        <span class="chip" data-type="area" data-area="produccion">Producción/Logística</span>
+      </div>
+
+      <div class="filter-group" id="grp-centros">
+        <h4>Centro</h4>
+        <span class="chip" data-type="centro" data-centro="arroyo">Arroyo</span>
+        <span class="chip" data-type="centro" data-centro="betania">Betania</span>
+        <span class="chip" data-type="centro" data-centro="colegio">Colegio</span>
+        <span class="chip" data-type="centro" data-centro="jerusalen">Jerusalén</span>
+        <span class="chip" data-type="centro" data-centro="lucero">Lucero</span>
+        <span class="chip" data-type="centro" data-centro="padre">Padre Misericordioso</span>
+        <span class="chip" data-type="centro" data-centro="santo">Santo Domingo</span>
+      </div>
+
+      <div class="filter-group" id="grp-log">
+        <h4>Logística</h4>
+        <span class="chip" data-type="log" data-log="vestuario">Vestuario</span>
+        <span class="chip" data-type="log" data-log="materiales">Materiales</span>
+        <span class="chip" data-type="log" data-log="proyeccion">Proyección</span>
+        <span class="chip" data-type="log" data-log="luces">Luces</span>
+        <span class="chip" data-type="log" data-log="utileria">Utilería</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="search">
+          <input id="q" type="search" placeholder="Buscar en la escena…" aria-label="Buscar" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- Imagen principal -->
+    <div class="hero">
+      <img src="Escena 8.jpg" alt="Escena 8: Colombia Tierra Querida" />
+    </div>
+
+    <div class="grid">
+      <!-- COLUMNA PRINCIPAL -->
+      <section>
+        <!-- Resumen -->
+        <div class="card" data-tags="general produccion" data-centros="padre santo lucero arroyo betania colegio jerusalen">
+          <header onclick="toggle(this)"><h2>Resumen en 30 segundos</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <p>Apoteosis final. Sofía vuelve a casa <b>reunida</b>: cuerpo, memoria y alegría se encuentran en un <b>mapa vivo de Colombia</b>. El elenco celebra la vida con <em>Colombia Tierra Querida</em> en vivo y una imagen colectiva que forma la <b>bandera</b>.</p>
+            <div class="tools">
+              <span class="pill">Duración: 7–10 min</span>
+              <span class="pill">Lenguajes: Teatro · Danza · Artes Plásticas</span>
+              <span class="pill">Música: Orquesta (“Colombia Tierra Querida”)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Propósito -->
+        <div class="card" data-tags="general" data-centros="padre santo lucero arroyo betania colegio jerusalen">
+          <header onclick="toggle(this)"><h2>🎯 Propósito pedagógico</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ul>
+              <li><strong>Integrar</strong> lo aprendido: cuerpo, emoción, comunidad e imaginación.</li>
+              <li><strong>Celebrar</strong> la diversidad regional de Colombia en danza y música.</li>
+              <li><strong>Afianzar</strong> el orgullo y la voz colectiva: <em>“Estamos vivos”</em>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Acción paso a paso -->
+        <div class="card" data-tags="teatro danza musica" data-centros="padre santo lucero">
+          <header onclick="toggle(this)"><h2>🇨🇴 Acción paso a paso</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ol>
+              <li><b>Entrada de Sofía</b> con traje blanco; escenario en espera (silencio expectante).</li>
+              <li><b>Llegan los personajes</b> de escenas anteriores: la visten con <em>flores, trenzas, cintas, palabras y sonidos</em>.</li>
+              <li><b>Tableaux regionales</b>: parejas/tríos congelados con vestuarios de varias regiones; cuando Sofía se acerca <em>se activan, bailan y vuelven a congelar</em>.</li>
+              <li><b>Declaración</b> de Sofía en el centro: “¡Soy cuerpo, memoria, tambor, viento, flor! ¡Soy Colombia!”</li>
+              <li><b>Apoteosis</b>: orquesta entra con <em>Colombia Tierra Querida</em>; todos bailan; final con <b>bandera humana</b> y frase colectiva.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Imagen plástica -->
+        <div class="card" data-tags="plastica produccion" data-centros="lucero" data-log="materiales proyeccion vestuario utileria">
+          <header onclick="toggle(this)"><h2>🎨 Imagen plástica en escena</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ul>
+              <li><strong>Fondo</strong>: <b>mapa vivo de Colombia</b> (proyección + dibujos amarillos, azules y rojos).</li>
+              <li><strong>Elementos</strong>: pancartas/ilustraciones regionales (pacífico, caribe, llano, andino) para formar la <b>bandera final</b>.</li>
+              <li><strong>Vestuario</strong>: trajes representativos por regiones; Sofía sigue en blanco con adornos simbólicos.</li>
+            </ul>
+            <div class="stage-assets">
+              <div class="asset">
+                <a href="Fondo 8.jpg" data-preview><img src="Fondo 8.jpg" alt="Fondo proyectado – Mapa de Colombia" /></a>
+                <small class="muted">Fondo proyectado</small>
+              </div>
+              <div class="asset">
+                <a href="Escena 8.jpg" data-preview><img src="Escena 8.jpg" alt="Arte guía Escena 8" /></a>
+                <small class="muted">Arte guía</small>
+              </div>
+            </div>
+            <p class="note">Tip: los dibujos (A‑Z‑R) deben ser <em>ligeros</em> para elevarlos al final sin desorden visual.</p>
+          </div>
+        </div>
+
+        <!-- Luces -->
+        <div class="card" data-tags="luces tecnica" data-centros="padre santo lucero arroyo betania colegio jerusalen" data-log="luces">
+          <header onclick="toggle(this)"><h2>🎛️ Luces y transiciones</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <table>
+              <thead><tr><th>Cue</th><th>Estado</th><th>Detalle</th></tr></thead>
+              <tbody>
+                <tr><td><b>L1 – En espera</b></td><td>Blanco cálido tenue</td><td>Entrada de Sofía, silencio respirado.</td></tr>
+                <tr><td><b>L2 – Visten a Sofía</b></td><td>Recortes suaves + contra</td><td>Focos móviles sobre manos/gestos simbólicos.</td></tr>
+                <tr><td><b>L3 – Tableaux</b></td><td>Separación por zonas</td><td>Colores sugerentes por región (pacífico, caribe, llano, andino).</td></tr>
+                <tr><td><b>L4 – Declaración</b></td><td>Centro brillante</td><td>Sube intensidad al texto de Sofía; platea al 5%.</td></tr>
+                <tr><td><b>L5 – Apoteosis</b></td><td>General cálido</td><td>Orquesta en vivo; estrobos sutiles en coros, sin perder rostros.</td></tr>
+                <tr><td><b>L6 – Bandera</b></td><td>Ámbar/azul/rojo</td><td>Capas por tercios; fade final con respiración.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Guion (PDF) -->
+        <div class="card" data-tags="teatro produccion" data-centros="padre santo lucero arroyo betania colegio jerusalen">
+          <header onclick="toggle(this)"><h2>📄 Guion de la escena (PDF)</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <iframe class="pdf-frame" src="Guión Escena VIII.pdf#toolbar=1&navpanes=0&statusbar=0&view=FitH" title="Guion Escena 8"></iframe>
+            <div class="actions">
+              <a id="pdfView" class="btn" href="Guión Escena VIII.pdf" target="_blank" rel="noreferrer">🔎 Ver en pestaña</a>
+              <a id="pdfDownload" class="btn" href="Guión Escena VIII.pdf" download>⬇️ Descargar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partituras (carpeta) -->
+        <div class="card" data-tags="musica produccion" data-centros="padre santo lucero arroyo betania colegio jerusalen">
+          <header onclick="toggle(this)"><h2>🎼 Partituras (carpeta completa)</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <p class="muted">Tema principal <b>“Colombia Tierra Querida”</b>, versión de <em>gran cierre</em> con coda extendida para saludo.</p>
+            <p>
+              <a id="allScoresLink" class="btn" href="[PON_AQUÍ_EL_ENLACE_DE_LA_CARPETA_DE_PARTITURAS]" target="_blank" rel="noreferrer">📂 Abrir carpeta de partituras</a>
+            </p>
+            <p class="note">Tip: preparar <b>click</b> discreto para director y señal de <b>corte</b> al levantar bandera.</p>
+          </div>
+        </div>
+
+        <!-- Guía rítmica/figuras -->
+        <div class="card" data-tags="musica danza produccion" data-centros="padre santo lucero">
+          <header onclick="toggle(this)"><h2>🧭 Guía rítmica y figuras escénicas</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ul>
+              <li><b>Tempo</b>: alegre (marchado), espacio para llamada‑respuesta en metales/coros.</li>
+              <li><b>Formaciones</b>: entradas desde 4 puntos cardinales → círculo amplio → <b>bandera</b>.</li>
+              <li><b>Señales</b>: gesto de brazo del director para coda; pancartas arriba = <em>últimos 8</em>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="card" data-tags="general produccion tecnica danza teatro plastica musica" data-centros="padre santo lucero arroyo betania colegio jerusalen" data-log="vestuario luces materiales proyeccion utileria">
+          <header onclick="toggle(this)"><h2>✅ Checklist</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ul id="check-escena8">
+              <li>[ ] Proyección <b>Fondo 8.jpg</b> (mapa/colores A‑Z‑R) operativa.</li>
+              <li>[ ] <b>Dibujos/pancartas</b> listos y numerados para bandera final.</li>
+              <li>[ ] <b>Vestuario regional</b> por cuadros (pacífico, caribe, llano, andino).</li>
+              <li>[ ] Cues de luces L1–L6 programados y probados.</li>
+              <li>[ ] Señales de coda y corte sincronizadas Director–Luces–Video.</li>
+              <li>[ ] Ensayo de <b>tableaux activables</b> (acercamiento de Sofía).</li>
+            </ul>
+            <div class="actions">
+              <button class="btn" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLUMNA LATERAL -->
+      <aside>
+        <!-- Centros y responsables -->
+        <div class="card" data-tags="produccion" data-centros="padre santo lucero">
+          <header onclick="toggle(this)"><h2>👥 Centros y responsables</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ul>
+              <li><b>Teatro:</b> Padre Misericordioso B (Brenda)</li>
+              <li><b>Danza:</b> Santo Domingo (Camila)</li>
+              <li><b>Plástica:</b> Lucero (Leydy)</li>
+            </ul>
+            <p class="muted">Coordinación general: orquesta + docentes de centros.</p>
+          </div>
+        </div>
+
+        <!-- Materiales -->
+        <div class="card" data-tags="produccion plastica" data-centros="lucero" data-log="materiales vestuario proyeccion utileria">
+          <header onclick="toggle(this)"><h2>📦 Materiales clave</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ul>
+              <li><b>Vestuario regional</b>: pacífico, caribe, llano, cundiboyacense, mapalé.</li>
+              <li><b>Dibujos</b> A‑Z‑R (papel iris/crepé, nylon, cinta) para formar bandera.</li>
+              <li><b>Proyección</b>: <code>Fondo 8.jpg</code> con mapa/colores; overlays por regiones.</li>
+              <li><b>Luces</b>: cálidos de celebración + capas A‑Z‑R para el cierre.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Indicaciones musicales -->
+        <div class="card" data-tags="musica produccion" data-centros="padre santo lucero arroyo betania colegio jerusalen">
+          <header onclick="toggle(this)"><h2>🎺 Indicaciones musicales</h2><span class="caret">Contraer</span></header>
+          <div class="content">
+            <ul>
+              <li><b>Intro</b> en dinámicas medias para permitir activación de tableaux.</li>
+              <li><b>Bloques regionales</b> (si aplica): interludios cortos que permitan cambios de cuadro.</li>
+              <li><b>Coda extendida</b> para saludo y elevación de bandera (8–16 compases extra).</li>
+            </ul>
+            <p class="muted">Evitar tapar <em>texto</em> y <em>señales</em> con metales en la declaración de Sofía.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Volver -->
+    <div class="wrap center">
+      <a class="btn-back" href="index.html">⬅ Volver al menú</a>
+    </div>
+
+    <div class="footer">AlegreMente 2025 · Escena 8 · Guía práctica para todo público</div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

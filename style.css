@@ -1,0 +1,447 @@
+/* ==========================================================================
+   ALEGREMENTE 2025 · GUIA DE ESCENA (ESCENA 8)
+   style.css — Versión extendida, accesible y lista para impresión
+   - Sistema de variables y temas por escena
+   - Layout responsive en grid
+   - Filtros/chips con persistencia visual (clase .active)
+   - Cards plegables, tabla, checklist
+   - Reproductor mejorado y visor PDF
+   - Visor/overlay de imágenes
+   - Estados de enfoque accesibles y modo impresión
+   - Respeta prefers-reduced-motion y esquema de color del SO
+   ========================================================================== */
+
+/* ==============================
+   Reset básico + tipografía
+============================== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { height: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+}
+
+/* ==============================
+   Paleta base (por defecto)
+   — Luego se sobreescribe por escena
+============================== */
+:root{
+  --brand:        #7c3aed;   /* violeta vivo */
+  --brand-2:      #06b6d4;   /* cian */
+  --brand-dark:   #5b21b6;
+  --ok:           #f59e0b;   /* botón secundario */
+  --ok-dark:      #b45309;
+  --bg:           #f8fafc;   /* gris muy claro */
+  --paper:        #ffffff;
+  --text:         #111827;   /* gris-900 */
+  --muted:        #6b7280;   /* gris-500 */
+  --border:       #e5e7eb;   /* gris-200 */
+  --soft:         #f1f5f9;   /* gris-100 */
+  --focus:        0 0 0 3px color-mix(in srgb, var(--brand) 30%, transparent);
+  --shadow-1:     0 2px 6px rgba(0,0,0,.06);
+  --shadow-2:     0 10px 25px rgba(0,0,0,.08);
+
+  /* Radios y tamaños */
+  --radius-sm:    6px;
+  --radius:       10px;
+  --radius-lg:    14px;
+  --container:    1200px;
+
+  /* Tipos */
+  --h1: 22px;
+  --h2: 18px;
+  --small: 13px;
+
+  /* Embebidos */
+  --pdf-h: 520px;
+}
+
+/* ======================================================
+   Tema específico: ESCENA 8 (Colombia Tierra Querida)
+   Tricolor bandera (amarillo, azul, rojo) y acentos vivos
+====================================================== */
+body#scene8{
+  --col-yellow: #ffd100;
+  --col-blue:   #0033a0;
+  --col-red:    #ce1126;
+
+  --brand:      var(--col-blue);
+  --brand-2:    var(--col-red);
+  --brand-dark: #001e5e;
+
+  --bg:     #fffef7;              /* fondo muy claro amarillento */
+  --soft:   #fff9dd;              /* suave amarillo */
+  --focus:  0 0 0 3px color-mix(in srgb, var(--col-blue) 45%, transparent);
+}
+
+/* Soporte dark mode opcional del SO */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:     #0b1020;
+    --paper:  #0f172a;
+    --text:   #e5e7eb;
+    --muted:  #94a3b8;
+    --border: #1f2a44;
+    --soft:   #0b1530;
+    --shadow-1: 0 2px 8px rgba(0,0,0,.45);
+    --shadow-2: 0 20px 40px rgba(0,0,0,.35);
+    --focus: 0 0 0 3px color-mix(in srgb, var(--brand) 50%, transparent);
+  }
+}
+
+/* ==============================
+   Contenedor
+============================== */
+.wrap{ max-width: var(--container); margin: 0 auto; padding: 0 16px; }
+
+/* ==============================
+   Barra superior
+============================== */
+.top{
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(140%) blur(6px);
+}
+.topbar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 6px;
+}
+.topbar .brand{ display:flex; align-items:center; gap:10px; }
+.topbar h1{
+  margin:0; font-size: var(--h1); line-height:1.2;
+  color: var(--brand);
+  letter-spacing: .2px;
+}
+.topbar small{ font-size: var(--small); color: var(--muted); display:block; }
+.topbar img{
+  width:36px; height:36px; border-radius: 10px; object-fit:cover; box-shadow: var(--shadow-1);
+}
+
+.btn-back{
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  color:#fff; padding:9px 14px; border-radius: var(--radius);
+  text-decoration:none; transition: transform .12s ease, filter .2s ease;
+  display:inline-flex; align-items:center; gap:6px; font-weight:700;
+  box-shadow: var(--shadow-1);
+}
+.btn-back:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+.btn-back:active{ transform: translateY(0); }
+
+/* ==============================
+   Reproductor
+============================== */
+.playerbar{
+  background: var(--soft);
+  border-bottom:1px solid var(--border);
+  padding:8px 0;
+}
+.player{
+  display:flex; align-items:center; gap:10px; flex-wrap: wrap;
+}
+.player label{ font-weight:800; font-size:14px; }
+.player audio{ flex:1; min-width: 220px; accent-color: var(--brand); }
+.player .btn{
+  background: var(--ok); color:#fff; padding:8px 12px; border-radius: var(--radius-sm);
+  border:none; cursor:pointer; transition: transform .12s ease, background .2s ease;
+  box-shadow: var(--shadow-1); font-weight:700;
+}
+.player .btn:hover{ background: var(--ok-dark); transform: translateY(-1px); }
+.player .btn:active{ transform: translateY(0); }
+
+/* ==============================
+   Filtros y búsqueda
+============================== */
+.filters{
+  background: var(--paper);
+  border-bottom:1px solid var(--border);
+  padding:10px 0 6px;
+}
+.filter-group{ padding:6px 0; }
+.filter-group h4{ margin:0 0 6px; font-size:13px; color:#475569; font-weight:800; }
+.chip{
+  display:inline-flex; align-items:center; gap:6px;
+  background:#eef2ff; color:#1f2937;
+  padding:5px 11px; margin:4px 6px 0 0; border-radius: 30px;
+  font-size:13px; cursor:pointer; transition: all .15s ease;
+  border:1px solid #e5e7eb; user-select:none;
+}
+.chip:hover{ background:#e0e7ff; transform: translateY(-1px); }
+.chip.active{
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  color:#fff; border-color: transparent; transform: scale(1.03);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 18%, transparent);
+}
+
+.toolbar{ padding:8px 0 2px; }
+.search input{
+  width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius: 10px; outline:none;
+  font-size:14px; background:#fff;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+.search input:focus{
+  border-color: var(--brand);
+  box-shadow: var(--focus);
+}
+
+/* ==============================
+   Layout principal
+============================== */
+main.wrap{ margin: 18px auto 24px; }
+.grid{ display:grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+@media (max-width: 980px){ .grid{ grid-template-columns:1fr; } }
+
+/* ==============================
+   Imagen hero con decoración escena 8
+============================== */
+.hero{
+  position: relative; margin-bottom: 18px; border-radius: var(--radius-lg);
+  overflow: hidden; box-shadow: var(--shadow-2);
+  background:
+    radial-gradient(1200px 280px at 15% -40%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 60%),
+    radial-gradient(1000px 240px at 110% -60%, color-mix(in srgb, var(--brand-2) 12%, transparent), transparent 65%);
+}
+.hero img{
+  width:100%; display:block; aspect-ratio: 16/9; object-fit: cover;
+}
+
+/* Cinta tricolor sutil */
+body#scene8 .hero::after{
+  content:"";
+  position:absolute; inset:auto -8% -14% auto;
+  width: 320px; height: 320px; border-radius: 50%;
+  background:
+    conic-gradient(from 210deg,
+      var(--col-yellow) 0 33.333%,
+      var(--col-blue) 33.333% 66.666%,
+      var(--col-red) 66.666% 100%);
+  filter: blur(6px) saturate(110%); opacity:.35;
+  animation: orb8 10s ease-in-out infinite alternate;
+}
+@keyframes orb8{
+  from{ transform: translateY(0) translateX(0) rotate(0deg); }
+  to  { transform: translateY(-18px) translateX(14px) rotate(10deg); }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero::after{ animation: none; }
+}
+
+/* ==============================
+   Componente: Card
+============================== */
+.card{
+  background: var(--paper);
+  border:1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+.card header{
+  background:
+    radial-gradient(240px 100px at 0% 0%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 70%),
+    radial-gradient(200px 80px at 100% 0%, color-mix(in srgb, var(--brand-2) 12%, transparent), transparent 70%),
+    color-mix(in srgb, var(--brand) 7%, #eef2ff);
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  display:flex; justify-content:space-between; align-items:center; user-select:none;
+  border-bottom: 1px dashed color-mix(in srgb, var(--brand) 22%, transparent);
+}
+.card header:hover{
+  background: color-mix(in srgb, var(--brand) 12%, #e9efff);
+}
+.card header:focus-visible{ outline: none; box-shadow: var(--focus) inset; }
+.card .caret{ font-size:12px; color: var(--muted); }
+.card .content{ padding: 14px; display:block; animation: fadeIn .25s ease; }
+.card p{ margin: 6px 0; }
+.card ul, .card ol{ padding-left: 20px; margin: 8px 0 0; }
+.card li{ margin-bottom: 6px; }
+.card code{
+  background: #f3f4f6; border:1px solid #e5e7eb; padding:2px 6px; border-radius:6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+}
+.card table{
+  width:100%; border-collapse: collapse; margin-top: 10px;
+}
+.card th, .card td{
+  border:1px solid var(--border); padding:8px 10px; text-align:left; font-size:14px;
+}
+.card th{ background: #f8fafc; }
+
+/* Etiquetas tipo pill */
+.pill{
+  display:inline-block; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  color:#fff; font-size:11px; padding: 4px 10px; margin: 2px 4px 0 0; border-radius: 999px;
+  letter-spacing: .2px; font-weight:700;
+}
+
+/* Notas */
+.note{
+  background: #fff7e6; border-left: 4px solid #ffb703;
+  padding: 8px 10px; margin-top: 10px; font-size: 13px; border-radius: 6px 10px 10px 6px;
+}
+.muted{ color: var(--muted); font-size: 13px; }
+
+/* ==============================
+   Botones & Acciones
+============================== */
+.btn{
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  color:#fff; padding:8px 12px; border-radius: 10px; text-decoration:none;
+  font-size:14px; display:inline-flex; align-items:center; gap:8px;
+  margin:4px 0; transition: transform .12s ease, filter .2s ease; border: none;
+  cursor: pointer; box-shadow: var(--shadow-1); font-weight: 800;
+}
+.btn:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+.actions{ margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
+
+/* Enlaces deshabilitados */
+a[aria-disabled="true"]{
+  opacity:.6; cursor:not-allowed; pointer-events:none;
+}
+
+/* ==============================
+   Assets (imágenes y fondos)
+============================== */
+.stage-assets{ display:flex; flex-wrap:wrap; gap: 14px; }
+.asset{ flex: 1 1 160px; text-align:center; }
+.asset img{
+  width:100%; border:1px solid var(--border); border-radius: 10px; display:block; background:#fff;
+  box-shadow: var(--shadow-1);
+}
+.asset small{ color: var(--muted); display:block; margin-top: 4px; }
+
+/* Grilla auxiliar de assets */
+.asset-grid{
+  display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px;
+}
+
+/* ==============================
+   Visor PDF
+============================== */
+.pdf-frame{
+  width:100%; height: var(--pdf-h);
+  border:1px solid var(--border); border-radius: 10px; margin-top: 10px;
+  background: #0b1020;
+}
+
+/* ==============================
+   Checklist genérica (IDs libres por escena)
+============================== */
+ul[id^="check-"] li{
+  margin-bottom: 6px; font-size: 14px;
+}
+ul[id^="check-"] li input[type="checkbox"]{
+  margin-right: 8px; transform: translateY(1px);
+  accent-color: var(--brand);
+}
+
+/* ==============================
+   Aside
+============================== */
+aside .card{ font-size:14px; }
+aside ul{ list-style:none; padding-left:0; margin: 8px 0 0; }
+aside li{ margin-bottom:6px; }
+
+/* ==============================
+   Footer
+============================== */
+.footer{
+  text-align:center; font-size: 13px; color: #8a94a7;
+  margin-top: 26px; padding: 16px 8px;
+}
+
+/* ==============================
+   Imagen: Overlay (preview)
+============================== */
+#imgPreviewOverlay{
+  position: fixed; inset: 0; display: none; z-index: 9999;
+  background: rgba(4,6,18,.86);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#imgPreviewOverlay img{
+  max-width: 92vw; max-height: 92vh; border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+/* ==============================
+   Utilidades
+============================== */
+.center{ text-align:center; }
+.hidden{ display:none !important; }
+.kbd{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background:#f3f4f6; padding: 2px 6px; border-radius: 6px; border:1px solid #e5e7eb; font-size: 12px;
+}
+
+/* ==============================
+   Estados de enfoque accesibles
+============================== */
+a, button, .chip, .btn, .card > header{
+  outline: none;
+}
+a:focus-visible, button:focus-visible, .chip:focus-visible, .btn:focus-visible, .card > header:focus-visible{
+  box-shadow: var(--focus);
+  border-radius: 10px;
+}
+
+/* ==============================
+   Modo impresión
+============================== */
+@media print{
+  :root{ --bg:#fff; }
+  body{ background:#fff; color:#000; }
+  .filters, .playerbar, .toolbar, .btn, .btn-back{ display:none !important; }
+  .top{ border:none; margin: 0 0 10px 0; background:#fff; }
+  .card{ break-inside: avoid; page-break-inside: avoid; box-shadow: none; border-color: #bbb; }
+  .pdf-frame{ height: 380px; }
+  a{ color:#000; text-decoration:none; }
+}
+
+/* ==============================
+   Animaciones
+============================== */
+@keyframes fadeIn{
+  from{ opacity:0; transform: translateY(5px); }
+  to  { opacity:1; transform: translateY(0); }
+}
+
+/* ==============================
+   Extras de ESCENA 8
+   - Marcadores tricolor para listas creativas/musicales
+============================== */
+body#scene8 .card ul li::marker{
+  color: color-mix(in srgb, var(--col-yellow) 45%, var(--col-blue) 35%, var(--col-red) 20%);
+}
+
+/* Línea tricolor para tablas de cues (si se desea) */
+body#scene8 .card table thead tr{
+  background:
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--col-yellow) 70%, #fff) 0% 33.333%,
+      color-mix(in srgb, var(--col-blue) 70%,   #fff) 33.333% 66.666%,
+      color-mix(in srgb, var(--col-red) 70%,    #fff) 66.666% 100%);
+  color:#0b1020;
+}
+body#scene8 .card table th{
+  color:#0b1020; border-color: #e2e8f0;
+}
+
+/* Badges de estado para cues (opcional: usar <span class="pill cue-yellow|blue|red">) */
+.cue-yellow{ background: var(--col-yellow) !important; color:#000 !important; }
+.cue-blue{   background: var(--col-blue) !important;   color:#fff !important; }
+.cue-red{    background: var(--col-red) !important;    color:#fff !important; }
