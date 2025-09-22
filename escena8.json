@@ -116,5 +116,14 @@
     { "term": "tableau", "def": "cuadro escénico congelado que se activa con una señal." },
     { "term": "coda", "def": "sección final extendida para cierre y saludos." },
     { "term": "A-Z-R", "def": "amarillo-azul-rojo; tricolor de la bandera de Colombia." }
+  ],
+  "pistas": [
+    {
+      "title": "Danza · Escena 7 — Levantapolvos",
+      "href": "DANZA ESCENA 7 Levantapolvos.m4a",
+      "areas": ["danza"],
+      "icon": "🎧"
+    }
   ]
 }
+
