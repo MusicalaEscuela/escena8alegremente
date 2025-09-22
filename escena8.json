@@ -118,12 +118,37 @@
     { "term": "A-Z-R", "def": "amarillo-azul-rojo; tricolor de la bandera de Colombia." }
   ],
   "pistas": [
-    {
-      "title": "Danza · Escena 7 — Levantapolvos",
-      "href": "DANZA ESCENA 7 Levantapolvos.m4a",
-      "areas": ["danza"],
-      "icon": "🎧"
-    }
-  ]
+  {
+    "title": "Danza · Escena 8 (Bunde)",
+    "href": "DANZA ESCENA 8 (BUNDE).m4a",
+    "areas": ["danza"],
+    "icon": "🎧"
+  },
+  {
+    "title": "Danza · Escena 8 (Carranga)",
+    "href": "DANZA ESCENA 8 (CARRANGA).m4a",
+    "areas": ["danza"],
+    "icon": "🎧"
+  },
+  {
+    "title": "Danza · Escena 8 (Cumbia)",
+    "href": "DANZA ESCENA 8 (CUMBIA).m4a",
+    "areas": ["danza"],
+    "icon": "🎧"
+  },
+  {
+    "title": "Danza · Escena 8 (Joropo)",
+    "href": "DANZA ESCENA 8 (JOROPO).m4a",
+    "areas": ["danza"],
+    "icon": "🎧"
+  },
+  {
+    "title": "Danza · Escena 8 (Mapalé)",
+    "href": "DANZA ESCENA 8 (MAPALE).m4a",
+    "areas": ["danza"],
+    "icon": "🎧"
+  }
+]
 }
+
 
