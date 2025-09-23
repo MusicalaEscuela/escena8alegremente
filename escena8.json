@@ -87,7 +87,7 @@
   },
   "centros": {
     "items": [
-      "<b>Teatro:</b> Padre Misericordioso B",
+      "<b>Teatro:</b> Lucero",
       "<b>Danza:</b> Santo Domingo",
       "<b>Artes plásticas:</b> Lucero"
     ],
@@ -107,7 +107,7 @@
   "docentes": {
     "hint": "Sugerencia: cada docente puede tener su mini guía con materiales y tareas.",
     "items": [
-      { "name": "Eryck Martínez", "url": "docentes/brenda.html", "areas": ["teatro"] },
+      { "name": "Angie Nitola", "url": "docentes/brenda.html", "areas": ["teatro"] },
       { "name": "Camila Pirajan", "url": "docentes/camila.html", "areas": ["danza"] },
       { "name": "Leydy Díaz", "url": "docentes/leydy.html", "areas": ["plastica"] }
     ]
@@ -150,5 +150,6 @@
   }
 ]
 }
+
 
 
