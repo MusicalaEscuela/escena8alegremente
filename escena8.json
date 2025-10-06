@@ -5,28 +5,40 @@
     "footer": "AlegreMente 2025 · Escena 8 · Guía práctica",
     "images": {
       "hero": "Escena 8.jpg",
-      "heroAlt": "Escena 8 – Colombia Tierra Querida"
+      "heroAlt": "Escena 8 – Colombia Tierra Querida",
+      "logo": "logo.jpg"
     }
   },
+
   "audio": {
-    "label": "🎶 Audio: “Colombia Tierra Querida”",
-    "sources": ["Colombia Tierra Querida.mp3", "Colombia Tierra Querida - Orquesta.mp3"]
+    "label": "🎶 Audio principal: “Colombia Tierra Querida”",
+    "sources": ["Colombia Tierra Querida.mp3"],
+    "regionales": [
+      { "title": "Bunde", "src": "DANZA ESCENA 8 (BUNDE).m4a" },
+      { "title": "Carranga", "src": "DANZA ESCENA 8 (CARRANGA).m4a" },
+      { "title": "Cumbia", "src": "DANZA ESCENA 8 (JOROPO).m4a" },
+      { "title": "Mapalé", "src": "DANZA ESCENA 8 (MAPALE).m4a" }
+    ]
   },
+
   "filters": {
     "areas": ["teatro", "musica", "danza", "plastica", "luces", "sonido", "produccion"],
     "centros": ["arroyo", "betania", "colegio", "jerusalen", "lucero", "padre", "santo"],
     "log": ["vestuario", "sonido", "proyeccion", "materiales", "luces", "utileria"]
   },
+
   "resumen": {
     "text": "Apoteosis final. Sofía vuelve a casa <b>reunida</b>: cuerpo, memoria y alegría se encuentran en un <b>mapa vivo de Colombia</b>. El elenco celebra la vida con <em>Colombia Tierra Querida</em> en vivo y una imagen colectiva que forma la <b>bandera</b>.",
     "duration": "10 min",
     "tags": ["Teatro · Danza · Artes Plásticas", "Música: Orquesta (Colombia Tierra Querida)"]
   },
+
   "proposito": [
     "<strong>Integrar</strong> lo aprendido: cuerpo, emoción, comunidad e imaginación.",
     "<strong>Celebrar</strong> la diversidad regional de Colombia en danza y música.",
     "<strong>Afianzar</strong> el orgullo y la voz colectiva: <em>“Estamos vivos”</em>."
   ],
+
   "pasos": [
     "<b>Entrada de Sofía</b> con traje blanco; escenario en espera (silencio expectante).",
     "<b>Llegan los personajes</b> de escenas anteriores y la visten con <em>flores, trenzas, cintas, palabras y sonidos</em>.",
@@ -34,6 +46,7 @@
     "<b>Declaración</b> central: “¡Soy cuerpo, memoria, tambor, viento, flor! ¡Soy Colombia!”.",
     "<b>Apoteosis</b>: entra la orquesta con <em>Colombia Tierra Querida</em>; final con <b>bandera humana</b> y frase colectiva."
   ],
+
   "plastica": {
     "items": [
       "<strong>Fondo</strong>: <b>mapa vivo de Colombia</b> (proyección en A-Z-R: <code>Fondo 8.jpg</code>).",
@@ -42,9 +55,11 @@
     ],
     "assets": [
       { "src": "Fondo 8.jpg" },
-      { "src": "Escena 8.jpg" }
+      { "src": "Escena 8.jpg" },
+      { "src": "logo.jpg" }
     ]
   },
+
   "luces": [
     { "Cue": "<b>L1 – En espera</b>", "Estado": "Blanco cálido tenue", "Detalle": "Entrada de Sofía, silencio respirado." },
     { "Cue": "<b>L2 – Visten a Sofía</b>", "Estado": "Recortes suaves + contra", "Detalle": "Focos móviles sobre manos/gestos simbólicos." },
@@ -53,6 +68,7 @@
     { "Cue": "<b>L5 – Apoteosis</b>", "Estado": "General cálido", "Detalle": "Orquesta en vivo; estrobos sutiles en coros, sin perder rostros." },
     { "Cue": "<b>L6 – Bandera</b>", "Estado": "Ámbar/azul/rojo", "Detalle": "Capas por tercios; fade final con respiración." }
   ],
+
   "sonido": [
     "<b>Tempo:</b> alegre/marchado; espacio para llamada-respuesta en metales/coros.",
     "<b>Formas:</b> interludios breves para cambios de cuadro regional.",
@@ -60,19 +76,24 @@
     "<b>Refuerzo:</b> click discreto para dirección; monitoreo moderado sin tapar texto/indicaciones.",
     "<b>Señales:</b> gesto de brazo del director para coda; pancartas arriba = <em>últimos 8</em>."
   ],
+
   "vestuario": {
     "images": [
-      { "title": "Cuadro Caribe", "src": "vestuario-caribe.jpg", "file": "vestuario-caribe.jpg" },
-      { "title": "Cuadro Pacífico", "src": "vestuario-pacifico.jpg", "file": "vestuario-pacifico.jpg" },
-      { "title": "Cuadro Llano/Andino", "src": "vestuario-llano-andino.jpg", "file": "vestuario-llano-andino.jpg" }
+      { "title": "Cuadro Bunde", "src": "vestuariobunde.jpg", "file": "vestuariobunde.jpg" },
+      { "title": "Cuadro Carranga", "src": "vestuariocarranga.jpg", "file": "vestuariocarranga.jpg" },
+      { "title": "Cuadro Cumbia", "src": "vestuariocumbia.jpg", "file": "vestuariocumbia.jpg" },
+      { "title": "Cuadro Joropo", "src": "vestuariojoropo.jpg", "file": "vestuariojoropo.jpg" },
+      { "title": "Cuadro Mapalé", "src": "vestuariomapale.jpg", "file": "vestuariomapale.jpg" }
     ]
   },
+
   "escenario": {
     "images": [
       { "title": "Arte escena 8", "src": "Escena 8.jpg", "alt": "Arte de Escena 8" },
       { "title": "Fondo 8", "src": "Fondo 8.jpg", "alt": "Mapa vivo y colores A-Z-R" }
     ]
   },
+
   "checklist": [
     "[ ] Proyección <b>Fondo 8.jpg</b> operativa (mapa/colores A-Z-R).",
     "[ ] <b>Pancartas/ilustraciones</b> listas y numeradas para bandera final.",
@@ -81,75 +102,73 @@
     "[ ] Señales de <b>coda</b> y <b>corte</b> sincronizadas Director–Luces–Video.",
     "[ ] Ensayo de <b>tableaux activables</b> (acercamiento de Sofía)."
   ],
+
   "pdfs": {
     "guion": "Guión Escena VIII.pdf",
     "partitura": "Colombia Tierra Querida Partitura.pdf"
   },
+
   "centros": {
     "items": [
-      "<b>Teatro:</b> Lucero",
+      "<b>Teatro:</b> Padre Misericordioso B",
       "<b>Danza:</b> Santo Domingo",
       "<b>Artes plásticas:</b> Lucero"
     ],
     "docentesText": "Coordinación general: orquesta + docentes de centros."
   },
+
   "materiales": [
     "Vestuario regional por cuadros (pacífico, caribe, llano, cundiboyacense, andino). <span class='pill'>vestuario</span>",
     "Dibujos/pancartas A-Z-R (papel iris/crepé, nylon, cinta) para bandera. <span class='pill'>materiales</span>",
     "Proyección: <code>Fondo 8.jpg</code> con mapa/colores; overlays por regiones. <span class='pill'>proyeccion</span>",
     "Luces: cálidos de celebración + capas A-Z-R para el cierre. <span class='pill'>luces</span>"
   ],
+
   "recursos": [
     { "title": "Guión Escena VIII (PDF)", "href": "Guión Escena VIII.pdf", "areas": ["teatro", "produccion"], "icon": "📄" },
-    { "title": "Carpeta de Partituras – Colombia Tierra Querida", "href": "[PON_AQUÍ_EL_ENLACE_DE_LA_CARPETA_DE_PARTITURAS]", "areas": ["musica"], "icon": "🎼" },
-    { "title": "Pista – Colombia Tierra Querida (MP3)", "href": "Colombia Tierra Querida.mp3", "areas": ["musica"], "icon": "🎵" }
+    { "title": "Partitura – Colombia Tierra Querida (PDF)", "href": "Colombia Tierra Querida Partitura.pdf", "areas": ["musica"], "icon": "🎼" },
+    { "title": "Pista – Colombia Tierra Querida (MP3)", "href": "Colombia Tierra Querida.mp3", "areas": ["musica"], "icon": "🎵" },
+    { "title": "Pista regional – Bunde (M4A)", "href": "DANZA ESCENA 8 (BUNDE).m4a", "areas": ["danza", "musica"], "icon": "🎵" },
+    { "title": "Pista regional – Carranga (M4A)", "href": "DANZA ESCENA 8 (CARRANGA).m4a", "areas": ["danza", "musica"], "icon": "🎵" },
+    { "title": "Pista regional – Joropo (M4A)", "href": "DANZA ESCENA 8 (JOROPO).m4a", "areas": ["danza", "musica"], "icon": "🎵" },
+    { "title": "Pista regional – Mapalé (M4A)", "href": "DANZA ESCENA 8 (MAPALE).m4a", "areas": ["danza", "musica"], "icon": "🎵" }
   ],
+
   "docentes": {
     "hint": "Sugerencia: cada docente puede tener su mini guía con materiales y tareas.",
     "items": [
-      { "name": "Angie Nitola", "url": "docentes/brenda.html", "areas": ["teatro"] },
+      { "name": "Eryck Martínez", "url": "docentes/brenda.html", "areas": ["teatro"] },
       { "name": "Camila Pirajan", "url": "docentes/camila.html", "areas": ["danza"] },
       { "name": "Leydy Díaz", "url": "docentes/leydy.html", "areas": ["plastica"] }
     ]
   },
+
   "glosario": [
     { "term": "tableau", "def": "cuadro escénico congelado que se activa con una señal." },
     { "term": "coda", "def": "sección final extendida para cierre y saludos." },
     { "term": "A-Z-R", "def": "amarillo-azul-rojo; tricolor de la bandera de Colombia." }
   ],
-  "pistas": [
-  {
-    "title": "Danza · Escena 8 (Bunde)",
-    "href": "DANZA ESCENA 8 (BUNDE).m4a",
-    "areas": ["danza"],
-    "icon": "🎧"
-  },
-  {
-    "title": "Danza · Escena 8 (Carranga)",
-    "href": "DANZA ESCENA 8 (CARRANGA).m4a",
-    "areas": ["danza"],
-    "icon": "🎧"
-  },
-  {
-    "title": "Danza · Escena 8 (Cumbia)",
-    "href": "DANZA ESCENA 8 (CUMBIA).m4a",
-    "areas": ["danza"],
-    "icon": "🎧"
-  },
-  {
-    "title": "Danza · Escena 8 (Joropo)",
-    "href": "DANZA ESCENA 8 (JOROPO).m4a",
-    "areas": ["danza"],
-    "icon": "🎧"
-  },
-  {
-    "title": "Danza · Escena 8 (Mapalé)",
-    "href": "DANZA ESCENA 8 (MAPALE).m4a",
-    "areas": ["danza"],
-    "icon": "🎧"
+
+  "files": {
+    "images": [
+      "Escena 8.jpg",
+      "Fondo 8.jpg",
+      "logo.jpg",
+      "vestuariobunde.jpg",
+      "vestuariocarranga.jpg",
+      "vestuariocumbia.jpg",
+      "vestuariojoropo.jpg",
+      "vestuariomapale.jpg"
+    ],
+    "audio": [
+      "Colombia Tierra Querida.mp3",
+      "DANZA ESCENA 8 (BUNDE).m4a",
+      "DANZA ESCENA 8 (CARRANGA).m4a",
+      "DANZA ESCENA 8 (JOROPO).m4a",
+      "DANZA ESCENA 8 (MAPALE).m4a"
+    ],
+    "docs": ["Guión Escena VIII.pdf", "Colombia Tierra Querida Partitura.pdf"],
+    "code": ["index.html", "style.css", "script.js"],
+    "data": ["escena8.json"]
   }
-]
 }
-
-
-
